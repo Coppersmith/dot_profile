@@ -1,0 +1,35 @@
+### Commands and shortcuts
+alias ipyserv='ipython notebook'
+alias ls="ls -GF"
+alias la='ls -altrhG'
+alias findpy='find . | grep .py$'
+alias emax='emacs -nw'
+alias findR='find . | grep .R$'
+alias sudoo="sudo /bin/bash -l";
+
+
+### Qntfy
+alias q='cd ~/src/qntfy/mental_health/ ; source environment.sh'
+
+### Git
+alias gitstat='git status -uno'
+alias gitstath='git status | grep -v "../"'
+
+### Terminal
+if [ $USER = "root" ]; then
+	PS_COLOR="31m";
+else
+	PS_COLOR="32m";
+	#export TMPDIR="$HOME/.tmp";
+fi
+
+export PS1="\n[01;$PS_COLOR\u@\h[0m : \t : [01;34m\w[0m\n\$ "
+
+
+
+PATH="/Library/Frameworks/Python.framework/Versions/Current/bin:${PATH}"
+export PATH
+
+
+# Mongod nice startup command
+alias mongodb='sudo mongod --config /opt/local/etc/mongodb.conf --fork && sleep 1 && tail -20 /opt/local/var/log/mongod.log'
