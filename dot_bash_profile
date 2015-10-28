@@ -8,8 +8,11 @@ alias findR='find . | grep .R$'
 alias sudoo="sudo /bin/bash -l";
 
 
-### Qntfy
-alias q='cd ~/src/qntfy/mental_health/ ; source environment.sh'
+### For Pushing SSH keys
+sshcopykeys() {
+    cat ~/.ssh/id_rsa.pub | ssh $1 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+}
+alias ssh-copy-id=sshcopykeys
 
 ### Git
 alias gitstat='git status -uno'
